@@ -1,0 +1,238 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#header{
+    background-color: #0d6efd0d;
+}
+
+#header nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 4rem;
+    padding: 2rem;
+}
+
+#header nav h1{
+    font-size: 1.9rem;
+}
+
+#header nav button{
+    padding: 0.8rem;
+    border-radius: 8px;
+    background-color: #570DF8;
+    color: white;
+    font-weight: bold;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+#home h1{
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+#home p{
+    font-size: 1.2rem;
+    padding: 0 5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+#home button{
+    padding: 0.8rem;
+    border-radius: 8px;
+    background-color: #570DF8;
+    color: white;
+    font-weight: bold;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+#mobile-photo{
+    height: 50vh;
+    text-align: center;
+    background-color: #0d6efd0d;
+}
+
+#mobile-photo #images{
+    margin-bottom: 2rem;
+}
+
+#mobile-photo .img1,.img3{
+    filter: drop-shadow(0px 0px 2px black);
+    width: 20%;
+}
+
+#mobile-photo .img2{
+    width: 25%;
+}
+
+/* Search Phone  */
+#search-phone{
+    margin-bottom: 2rem;
+}
+
+#search-phone #content{
+    padding-bottom: 1rem;
+}
+
+#search-phone #content h1{
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+#search-phone #content input{
+    width: 20%;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    border: 1px solid gray;
+    margin: 0 1rem;
+}
+
+#search-phone #content form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#search-phone #content button{
+    padding: 0.8rem;
+    border-radius: 8px;
+    background-color: #570DF8;
+    color: white;
+    font-weight: bold;
+    border: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+/* Mobile Card  */
+#mobile-card{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.parent{
+    width: 30%;
+    padding: 1.5rem;
+    box-shadow: 0px 0px 5px gray;
+    margin: 1rem;
+    border-radius: 5px;
+}
+
+.name{
+    font-size: 2rem;
+    margin: 1rem;
+}
+
+.para{
+    font-size: 1.2rem;
+}
+
+.button{
+    padding: 0.8rem;
+    border-radius: 8px;
+    background-color: #570DF8;
+    color: white;
+    font-weight: bold;
+    border: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+    margin: 1.5rem 0;
+}
+
+/* Dialog box  */
+/* Modal Background (Hidden by Default) */
+.modal {
+    display: none; /* Initially hidden */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Content Box */
+.modal-content {
+    display: none;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 500px;
+    height: 600px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Close Button (X) */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Detail Style  */
+.detail-style{
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #525456;
+}
+
+/* footer  */
+#footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0d6efd0d;
+    flex-direction: column;
+    padding: 3rem 0;
+}
+
+.svg{
+    margin-bottom: 1rem;
+}
+
+#footer p{
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+#footer .copyRight{
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+#footer #media{
+    font-size: 2rem;
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+}
