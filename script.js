@@ -3,6 +3,14 @@ const input = document.querySelector("input");
 const mobileCard = document.querySelector("#mobile-card");
 const modalContent = document.querySelector(".modal-content");
 
+window.addEventListener("load", fetchDataLoad);
+
+async function fetchDataLoad(){
+    const respone = await fetch("https://openapi.programming-hero.com/api/phones?search=iphone");
+    const result = await respone.json();
+    displayMobileCard(result.data.slice(0,6));
+}
+
 form.addEventListener("submit", (e) => {
     e.preventDefault();
     fetchData();
@@ -64,13 +72,13 @@ function displayMobileCard(result){
 
 
 /* Close modal when clicking outside the content */
-window.addEventListener("click", function(event) {
-    let modal = document.getElementById("modal");
-    modalContent.innerHTML = "";
-    if (event.target === modal) {
-        modal.style.display = "none";
-    }
-});
+// window.addEventListener("click", function(event) {
+//     let modal = document.getElementById("modal");
+//     // modalContent.innerHTML = "";
+//     if (event.target === modal) {
+//         modal.style.display = "none";
+//     }
+// });
 
 async function displayDetails(value){
     const response = await fetch("https://openapi.programming-hero.com/api/phone/" + `${value}`);
