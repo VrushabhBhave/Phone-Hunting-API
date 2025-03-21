@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
 #header{
@@ -160,6 +161,12 @@
     margin: 1.5rem 0;
 }
 
+#show-All{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Dialog box  */
 /* Modal Background (Hidden by Default) */
 .modal {
@@ -187,6 +194,7 @@
     text-align: center;
     position: relative;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: auto;
 }
 
 /* Close Button (X) */
@@ -200,7 +208,7 @@
 
 /* Detail Style  */
 .detail-style{
-    font-size: 1rem;
+    font-size: 0.9rem;
     margin-bottom: 0.5rem;
     color: #525456;
 }

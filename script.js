@@ -2,13 +2,38 @@ const form = document.querySelector("form");
 const input = document.querySelector("input");
 const mobileCard = document.querySelector("#mobile-card");
 const modalContent = document.querySelector(".modal-content");
+const showAll = document.querySelector("#showAll");
 
-window.addEventListener("load", fetchDataLoad);
+window.addEventListener("load", () => {
+    fetchDataLoad();
+    showAll.style.display = "none";
+});
+
+let showAllData = false;
+let finalResult;
+function AllData(result){
+    if(showAllData == false){
+        finalResult = result.slice(0, 12);
+        displayMobileCard(finalResult);
+        showAllData = true;
+        showAll.style.display = "block";
+    }
+    else{
+        finalResult = result;
+        displayMobileCard(finalResult);
+        showAllData = false;
+        showAll.style.display = "none";
+    }
+}
+
+showAll.addEventListener("click", () => {
+    fetchData();
+});
 
 async function fetchDataLoad(){
     const respone = await fetch("https://openapi.programming-hero.com/api/phones?search=iphone");
     const result = await respone.json();
-    displayMobileCard(result.data.slice(0,6));
+    displayMobileCard(result.data.slice(0,5));
 }
 
 form.addEventListener("submit", (e) => {
@@ -19,14 +44,15 @@ form.addEventListener("submit", (e) => {
 async function fetchData(){
     const respone = await fetch("https://openapi.programming-hero.com/api/phones?search=" + `${input.value}`);
     const result = await respone.json();
-    console.log(result.data);
-    displayMobileCard(result.data);
+    // console.log(result.data);
+    AllData(result.data);
+    // displayMobileCard(result.data);
 }
 
-function displayMobileCard(result){
+function displayMobileCard(finalResult){
     mobileCard.innerHTML = "";
     const fregment = document.createDocumentFragment();
-    result.forEach((data) => {
+    finalResult.forEach((data) => {
         const parent = document.createElement("div");
         const image = document.createElement("img");
         const name = document.createElement("h2");
@@ -44,6 +70,7 @@ function displayMobileCard(result){
             document.getElementById("modal").style.display = "flex";
             document.querySelector(".modal-content").style.display = "block";
             const modal = document.querySelector("#modal");
+            console.log(e);
             console.log(e.target.value);
             displayDetails(e.target.value);
             modal.classList.add("modal");
@@ -132,3 +159,11 @@ function displayData(obj){
     modalContent.prepend(span);
     modalContent.append(parent);
 }
+
+window.addEventListener("keyup", (e) => {
+    if(e.key == "Escape"){
+        console.log("press");
+        document.getElementById("modal").style.display = "none";
+        modalContent.innerHTML = "";
+    }
+});
